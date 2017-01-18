@@ -23,13 +23,13 @@
 \headcommand {\beamer@framepages {11}{11}}
 \headcommand {\slideentry {0}{0}{12}{12/12}{}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\slideentry {0}{0}{13}{13/13}{}{0}}
-\headcommand {\beamer@framepages {13}{13}}
 \headcommand {\partentry {Appendix}{1}}
-\headcommand {\beamer@partpages {1}{13}}
-\headcommand {\beamer@sectionpages {1}{13}}
-\headcommand {\beamer@subsectionpages {1}{13}}
-\headcommand {\beamer@appendixpages {14}}
+\headcommand {\beamer@partpages {1}{12}}
+\headcommand {\beamer@sectionpages {1}{12}}
+\headcommand {\beamer@subsectionpages {1}{12}}
+\headcommand {\beamer@appendixpages {13}}
+\headcommand {\slideentry {0}{0}{13}{13/13}{}{1}}
+\headcommand {\beamer@framepages {13}{13}}
 \headcommand {\slideentry {0}{0}{14}{14/14}{}{1}}
 \headcommand {\beamer@framepages {14}{14}}
 \headcommand {\slideentry {0}{0}{15}{15/15}{}{1}}
@@ -44,10 +44,10 @@
 \headcommand {\beamer@framepages {19}{19}}
 \headcommand {\slideentry {0}{0}{20}{20/20}{}{1}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\beamer@partpages {14}{20}}
-\headcommand {\beamer@subsectionpages {14}{20}}
-\headcommand {\beamer@sectionpages {14}{20}}
+\headcommand {\beamer@partpages {13}{20}}
+\headcommand {\beamer@subsectionpages {13}{20}}
+\headcommand {\beamer@sectionpages {13}{20}}
 \headcommand {\beamer@documentpages {20}}
-\headcommand {\def \inserttotalframenumber {7}}
-\headcommand {\def \inserttotalframenumber {13}}
-\headcommand {\def \appendixtotalframenumber {7}}
+\headcommand {\def \inserttotalframenumber {8}}
+\headcommand {\def \inserttotalframenumber {12}}
+\headcommand {\def \appendixtotalframenumber {8}}
