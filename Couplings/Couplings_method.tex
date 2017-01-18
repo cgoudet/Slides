@@ -1,0 +1,299 @@
+\documentclass[a4paper]{beamer}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{appendixnumberbeamer}
+\usepackage{tikz}
+\usepackage{csvsimple}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{pdfpages}
+\usepackage{cleveref}
+\usepackage{pgffor}
+\usepackage{calculator}
+\usepackage[orientation=paysage,size=A4]{beamerposter}
+\captionsetup{labelformat=empty,labelsep=none}
+\beamertemplatenavigationsymbolsempty
+
+%\input{/home/goudet/Hgg/Slides/BeamerTemplate/ChangeDefault}
+\usetheme{Boadilla}
+
+\title[$H\gamma\gamma$ couplings]{Higgs couplings statistical challenge}
+\author[Goudet]{Christophe Goudet}
+\institute[LAL]{\includegraphics[width=0.3\linewidth]{/home/goudet/Hgg/ExternalPlot/LAL.jpg} }
+
+\date{\today}
+
+\begin{document}
+\transboxin
+\begin{frame}
+\maketitle
+\end{frame}
+
+%\input{Method}
+\begin{frame}{Introduction}
+Presentation of the creation and the fit of a workspace to measure the $H\gamma\gamma$ couplings.
+\vfill
+Results presented with the Stat Challenge using h011 with improved systematic model.
+\vfill
+Two methods of workspace creation are presented.
+\end{frame}
+
+\begin{frame}{Signal parametrization}
+  A unique signal parametrization ($S_s$) is used for all production processes in a category.
+  $$S_s = \sum\limits_{i\in prod} y_i S_{i,s}$$
+  with $S_{i,s}$ the signal parametrization (CB+Gaus) and $y_i$ the signal yield of a single production process.
+  $y_i$ and $S_{i,s}$ {\bf reconstructed from raw parameters} from Andrew's tool (fullReco). 
+  \vfill
+  Secondary method (pdfReco) {\bf uses the total pdf of a category }from the tool for each process. 
+  Pdf is then edited to include nuisance parameters in corresponding functions. 
+  \vfill
+  Total $m_{\gamma\gamma}$ parametrization in a category :
+  $$P = n_{bkg}B + n_{spurious}\theta S_s + \sum\limits_{i\in prod} y_i(1+\delta\cdot\theta) S_{s}$$
+  with B background model fitted on data.
+
+\end{frame}
+
+
+\begin{frame}{Background modeling}
+  2 parametrizations of background are used : ($mHRen=\frac{m_{yy}-100}{100}$)\newline
+  \begin{minipage}{0.49\linewidth}
+    $$B=exp(@0* m_{\gamma\gamma})$$
+    \begin{itemize}
+    \item VH\_leptonic
+\item VH\_MET
+\item VH\_dilepton
+\item ttH\_leptonic
+\item ttH\_hadronic
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\linewidth}
+$$exp(@0*mHRen + @1*mHRen^2)$$
+\begin{itemize}
+\item ggH
+\item VBF low
+\item VBF high
+\item VH hadronic low
+\item VH hadronic high
+\end{itemize}
+\end{minipage}
+\vfill
+Constant function and $4^{th}$ order Bernstein polynomial are also available.
+\end{frame}
+
+\begin{frame}{Uncertainties}
+Uncertainties scale the yield (mass, width) as $(1+\delta\cdot\theta)$ with $\delta$ the uncertainty value and $\theta$ a constraint nuisance parameters.
+\vfill
+\begin{minipage}{0.49\linewidth}
+Nuisance parameters can be constrained with either :
+\begin{itemize}
+\item Gaussian
+\item Double sided gaussian
+\item Log normal
+\end{itemize}
+\vfill
+QCDscale and pdf uncertainties are decorelated in this result.
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\linewidth}
+\begin{center}
+\resizebox{\linewidth}{!} {
+\begin{tabular}{llll}
+  \hline
+  Uncertainty & low (\%)& high (\%) & constraint \\
+  \hline
+  ATLAS\_MSS\_EM\_PES & -0.05 & 0.04 & Assym Gauss \\
+  ATLAS\_MRES\_EM\_PER & -12 & 30 & Assym Gauss \\
+  ATLAS\_LUMI\_2015 & 0.05 & 0.05 & Gauss \\
+  ATLAS\_PH\_EFF\_ID\_2015 & 0.025 & 0.025 & Gauss \\
+  ATLAS\_PH\_Calo\_Iso\_2015 & 0.43 & 0.16 & Assym Gauss \\
+  ATLAS\_PH\_Trk\_Iso\_2015 & 3.93 & 4.00  & Assym Gauss \\
+  QCDscale\_ggH & 7.9 & 7.4 & Assym Gauss \\
+  QCDscale\_VBF & 0.7 & 0.7 & Assym Gauss \\
+  QCDscale\_WH & 1.5 & 0.7 & Assym Gauss \\
+  QCDscale\_ZH & 3.8 & 3.8 & Assym Gauss \\
+  QCDscale\_ttH & 9.3 & 5.7 & Assym Gauss \\
+%  QCDscale\_bbH & 24 & 14 & Assym Gauss \\
+  ATLAS\_BR\_gg & 4.89 & 4.98 & Assym Gauss \\
+  pdf\_gg\_ggH & 6.0 & 7.1 & Assym Gauss \\
+  pdf\_qq\_VBF & 3.2 & 3.2 & Assym Gauss \\
+  pdf\_qq\_WH & 2.2 & 2.2 & Assym Gauss \\
+  pdf\_qq\_ZH & 2.2 & 2.2 & Assym Gauss \\
+  pdf\_gg\_ttH & 8.8 & 8.8 & Assym Gauss \\
+%  pdf\_gg\_bbH & 6.1 & 6.1 & Assym Gauss \\
+  \hline
+  \end{tabular}
+}
+\end{center}
+\end{minipage}
+\end{frame}
+
+%%=======================================
+% \begin{frame}{Fit results (fullReco)}
+%   \begin{minipage}{0.69\linewidth}
+%     \begin{itemize}
+%     \item Workspace designed with production processes' raw parameters.
+%     \item Fit performed at fixed $m_H=125$GeV and fixed $\mu=1$.
+%     \item 5 \textcolor{blue}{production mu's} are fitted.
+%     \item \textcolor{green}{most systematics } have proper fitted value and uncertainty ($0\pm 1$).
+%     \item \textcolor{brown}{PER} pulled and overconstrained. Detailed later.
+%     \end{itemize}
+%   \end{minipage}
+%   \hfill
+%   \begin{minipage}{0.3\linewidth}
+%     \begin{tikzpicture}
+%       \node[anchor=south west] {    \begin{adjustbox}{max width=\linewidth}
+%           \begin{tabular}{lllll}
+%             \csvautotabular{StatChallenge_h011.csv}
+%           \end{tabular}
+%         \end{adjustbox}\\
+%       };
+% %      \draw[step=1.0,black,thin] (0,0) grid (10,18);
+%       \draw[green, line width=0.5mm, rounded corners =2pt] ( 0.4, 6.6 ) rectangle ( 8.9, 10.9 ) ;
+% %%      \draw[red, line width=0.5mm, rounded corners =2pt] ( 0.4, 16.2 ) rectangle ( 8.9, 16.6 ) ;
+%       \draw[blue, line width=0.5mm, rounded corners =2pt] ( 0.4, 15.1) rectangle ( 8.9, 17.2 ) ;
+%       \draw[brown, line width=0.5mm, rounded corners =2pt] ( 0.4, 9.6 ) rectangle ( 8.9, 10.05 ) ;
+%     \end{tikzpicture}
+%   \end{minipage}
+% \end{frame}
+
+% \begin{frame}{Categories fit (fullReco)}
+%   \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__ggH.pdf}
+%   \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__VBF_high.pdf}
+%   \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__VBF_low.pdf}
+%   \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__VH_dileptons.pdf}
+%   \newline
+%   \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__VH_hadronic_high.pdf}
+%   \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__VH_hadronic_low.pdf}
+%   \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__VH_leptonic.pdf}
+%   \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__VH_MET.pdf}
+%   \newline
+%   \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__ttH_hadronic.pdf}
+%   \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__ttH_leptonic.pdf}
+% \end{frame}
+
+\begin{frame}{Fit results (pdfReco)}
+  \begin{minipage}{0.54\linewidth}
+    \begin{itemize}
+    \item Workspace designed with categories' total pdf.
+    \item Fit performed at fixed $m_H=125$GeV and fixed $\mu=1$.
+    \item 5 \textcolor{blue}{production mu's} are fitted.
+    \item \textcolor{green}{most systematics } have proper fitted value and uncertainty ($0\pm 1$).
+    \item \textcolor{brown}{PER} pulled and overconstrained. Detailed later.
+    \end{itemize}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.35\linewidth}
+    \begin{tikzpicture}
+      \node[anchor=south west] {    \begin{adjustbox}{max width=\linewidth}
+          \begin{tabular}{lllll}
+            \csvautotabular{StatChallenge_h011_pdfReco.csv}
+          \end{tabular}
+        \end{adjustbox}\\
+      };
+%      \draw[step=1.0,black,thin] (0,0) grid (10,18);
+      \draw[green, line width=0.5mm, rounded corners =2pt] ( 0.4, 0.3 ) rectangle ( 10.3, 8.8 ) ;
+%%      \draw[red, line width=0.5mm, rounded corners =2pt] ( 0.4, 16.2 ) rectangle ( 8.9, 16.6 ) ;
+      \draw[blue, line width=0.5mm, rounded corners =2pt] ( 0.4, 13.8) rectangle ( 10.3, 16.3 ) ;
+      \draw[brown, line width=0.5mm, rounded corners =2pt] ( 0.4, 7.3 ) rectangle ( 10.3, 7.8 ) ;
+    \end{tikzpicture}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}{Categories fit (pdfReco)}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__ggH.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__VBF_high.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__VBF_low.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__VH_dileptons.pdf}
+  \newline
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__VH_hadronic_high.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__VH_hadronic_low.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__VH_leptonic.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__VH_MET.pdf}
+  \newline
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__ttH_hadronic.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Shared/PlotsGoudet/Hgam/Couplings/Models/Mus/mu_XS_ggH__ttH_leptonic.pdf}
+\end{frame}
+
+\begin{frame}{Comparison - Very Preliminary }
+  \begin{minipage}{0.49\linewidth}
+    Comparison with Marc's fit is performed.
+    Significant differences are observed. 
+    More work needed to understand differences.
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.49\linewidth}
+    \includegraphics[width=0.49\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160413_CompareResults_ggH.pdf}
+    \includegraphics[width=0.49\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160413_CompareResults_VBF_high.pdf}
+  \end{minipage}
+
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160413_CompareResults_VBF_low.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160413_CompareResults_VH_dileptons.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160413_CompareResults_VH_hadronic_high.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160413_CompareResults_VH_hadronic_low.pdf}
+  \newline
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160413_CompareResults_VH_leptonic.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160413_CompareResults_VH_MET.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160413_CompareResults_ttH_hadronic.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160413_CompareResults_ttH_leptonic.pdf}
+\end{frame}
+
+% \begin{frame}{PER constraint}
+%   \begin{minipage}{0.59\linewidth}
+%     \begin{itemize}
+%     \item Fits show a pulled and overconstrained PER systematic.
+%     \item Comparison with fit at fixed PER=0.
+%     \item No significant discrepancy
+%     \end{itemize}
+%   \end{minipage}
+%   \hfill
+%   \begin{minipage}{0.39\linewidth}
+%     \begin{tikzpicture}
+%       \node[anchor=south west] {    \begin{adjustbox}{max width=\linewidth}
+%           \begin{tabular}{lllll}
+%             \csvautotabular{PERConstraint_h011.csv}
+%           \end{tabular}
+%         \end{adjustbox}\\
+%       };
+% %      \draw[step=1.0,black,thin] (0,0) grid (10,15);
+%       \draw[blue, line width=0.5mm, rounded corners =2pt] ( 0.4, 10.2 ) rectangle ( 14.34, 10.65 ) ;
+%       \draw[blue, line width=0.5mm, rounded corners =2pt] ( 0.4, 11.7 ) rectangle ( 14.34, 12.1 ) ;
+
+%     \end{tikzpicture}
+%   \end{minipage}
+% \end{frame}
+
+\begin{frame}{Categories fit : PER difference}
+
+  \begin{minipage}{0.49\linewidth}
+    Fit shows a pulled and over constrained resolution nuisance parameters.
+    The results are compared with a second fit, fixing the nuisance parameter to $0$.
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.49\linewidth}
+    \includegraphics[width=0.49\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160411_TestNui_ggH.pdf}
+    \includegraphics[width=0.49\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160411_TestNui_VBF_high.pdf}
+  \end{minipage}
+
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160411_TestNui_VBF_low.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160411_TestNui_VH_dileptons.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160411_TestNui_VH_hadronic_high.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160411_TestNui_VH_hadronic_low.pdf}
+  \newline
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160411_TestNui_VH_leptonic.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160411_TestNui_VH_MET.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160411_TestNui_ttH_hadronic.pdf}
+  \includegraphics[width=0.245\linewidth]{/home/goudet/Hgg/Zim/Hgam/Fits/160411_TestNui_ttH_leptonic.pdf}
+\end{frame}
+
+%% ###################################################################################
+%%###################################################################################
+%%###################################################################################
+\appendix
+
+\end{document}
+
+

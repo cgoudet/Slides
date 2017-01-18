@@ -1,0 +1,26 @@
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{|l|rr|rr|rr|rr|}
+\hline
+\multicolumn{9}{|c|}{Photon Calibration Uncertainties (\%)}\\
+\hline
+Category&\multicolumn{4}{c|}{EG\_RESOLUTION\_ALL}&\multicolumn{4}{c|}{EG\_SCALE\_ALL}\\
+&\multicolumn{2}{c|}{mean}&\multicolumn{2}{c|}{sigma}&\multicolumn{2}{c|}{mean}&\multicolumn{2}{c|}{sigma}\\
+&\multicolumn{1}{c|}{Up}&\multicolumn{1}{c|}{Down}&\multicolumn{1}{c|}{Up}&\multicolumn{1}{c|}{Down}&\multicolumn{1}{c|}{Up}&\multicolumn{1}{c|}{Down}&\multicolumn{1}{c|}{Up}&\multicolumn{1}{c|}{Down}\\
+\hline
+Inclusive & 0.00 & 0.00 & 8.96 & -8.77 & 0.46 & -0.46 & 0.00 & 0.00\\
+ggH\_CenLow & 0.00 & 0.00 & 7.59 & -7.49 & 0.31 & -0.31 & 0.00 & 0.00\\
+ggH\_CenHigh & 0.00 & 0.00 & 11.44 & -11.22 & 0.38 & -0.38 & 0.00 & 0.00\\
+ggH\_FwdLow & 0.00 & 0.00 & 8.85 & -8.61 & 0.54 & -0.54 & 0.00 & 0.00\\
+ggH\_FwdHigh & 0.00 & 0.00 & 11.85 & -11.70 & 0.62 & -0.61 & 0.00 & 0.00\\
+VBFloose & 0.00 & 0.00 & 10.59 & -10.20 & 0.49 & -0.49 & 0.00 & 0.00\\
+VBFtight & 0.00 & 0.00 & 12.62 & -12.26 & 0.52 & -0.52 & 0.00 & 0.00\\
+VHhad\_loose & 0.00 & 0.00 & 11.71 & -11.34 & 0.52 & -0.52 & 0.00 & 0.00\\
+VHhad\_tight & 0.00 & 0.00 & 15.14 & -15.01 & 0.57 & -0.58 & 0.00 & 0.00\\
+VHMET & 0.00 & 0.00 & 12.35 & -11.37 & 0.53 & -0.56 & 0.00 & 0.00\\
+VHlep & 0.00 & 0.00 & 11.19 & -11.13 & 0.54 & -0.53 & 0.00 & 0.00\\
+VHdilep & 0.00 & 0.00 & 8.94 & -10.21 & 0.47 & -0.47 & 0.00 & 0.00\\
+ttHhad & 0.00 & 0.00 & 10.63 & -11.09 & 0.49 & -0.49 & 0.00 & 0.00\\
+ttHlep & 0.00 & 0.00 & 10.64 & -10.84 & 0.48 & -0.49 & 0.00 & 0.00\\
+\hline
+\end{tabular}
+}
