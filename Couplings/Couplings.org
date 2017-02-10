@@ -1,0 +1,106 @@
+# #+TITLE:     Photon Energy Calibration Systematics
+#+AUTHOR:    Christophe Goudet
+# #+EMAIL:     goudet@lal.in2p3.fr
+# #+DATE:\today
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+# #+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0
+# path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+
+#+BEAMER_HEADER: \beamertemplatenavigationsymbolsempty
+#+BEAMER_HEADER: \usepackage{appendixnumberbeamer}
+#+BEAMER_THEME: Boadilla
+
+* Correlation model
+** Merging in \eta
+
+Two models of merging of the FULL (84NP) model are tested.
+In both cases it relies on recorrelating \eta bins of some systematics.
+
+\vfill
+
+*** FullMerged
+:PROPERTIES:
+:BEAMER_COL: 0.5
+:END:
+
+*FullMerged*
+
+Merge some systematics into Barrel+encap (48NP)
+- MATCALO
+- MATCRYO
+- S12
+- PS
+
+*** mergeEta
+:PROPERTIES:
+:BEAMER_COL: 0.5
+:END:
+
+ *MergeEta*
+
+Correlate all systematics in \eta (31NP)
+
+** Results
+*** topLeft                                                           :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+#+ATTR_LATEX: :width \linewidth
+[[./plots/h013_ALL_Systematics_Inclusive_mean_mean.pdf]]
+
+*** topRight                                                      :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+#+ATTR_LATEX: :width \linewidth
+[[./plots/h013_FULL_Systematics_Inclusive_mean_mean.pdf]]
+
+*** newline                                                 :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+*** bottomLeft                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+#+ATTR_LATEX: :width \linewidth
+[[./plots/h013_FULLMerge_Systematics_Inclusive_mean_mean.pdf]]
+
+*** bottomRight                                                       :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+#+ATTR_LATEX: :width \linewidth
+[[./plots/h013_FULLNoEta_Systematics_Inclusive_mean_mean.pdf]]
+
+** Comparison
+[[/home/goudet/Documents/LAL/Zim/Hgam/PhotonSystematic/170209_CompareSystModel_h013.pdf]]
+* h014
+** ALL
+
+*** inclusive                                                         :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :width \linewidth
+[[./plots/h014_ALL_Systematics_Inclusive_mean_mean.pdf]]
+[[./plots/h014_ALL_Systematics_Inclusive_sigma_sigma.pdf]]
+
+*** categories                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :width \linewidth
+[[/home/goudet/Documents/LAL/Zim/Hgam/PhotonSystematic/170209_CompareSystModel_h014.pdf]]
