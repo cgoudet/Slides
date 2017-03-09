@@ -1,4 +1,4 @@
-% Created 2017-02-10 ven. 11:27
+% Created 2017-03-06 lun. 16:08
 % Intended LaTeX compiler: pdflatex
 \documentclass[bigger]{beamer}
 \usepackage[utf8]{inputenc}
@@ -17,101 +17,131 @@
 \usetheme{Boadilla}
 \author{Christophe Goudet}
 \date{\today}
-\title{}
+\title{Discussion on calibration systematic model}
 \beamertemplatenavigationsymbolsempty
 \usepackage{appendixnumberbeamer}
 \hypersetup{
  pdfauthor={Christophe Goudet},
- pdftitle={},
+ pdftitle={Discussion on calibration systematic model},
  pdfkeywords={},
  pdfsubject={},
  pdfcreator={Emacs 24.5.1 (Org mode 9.0.4)},
  pdflang={English}}
 \begin{document}
 
+\maketitle
+
+
 
 \section{Correlation model}
-\label{sec:org958366e}
-\begin{frame}[label={sec:org44f2794}]{Merging in \(\eta\)}
-Two models of merging of the FULL (84NP) model are tested.
-In both cases it relies on recorrelating \(\eta\) bins of some systematics.
+\label{sec:orgd8ba212}
 
+\begin{frame}[label={sec:org6c9537b}]{Introduction}
+\begin{itemize}
+\item Calibration uncertainties include \textasciitilde{}85 sources
+\item Minimal model (ALL)
+\begin{itemize}
+\item Conservative (\(\Delta\) m\(_{\text{H}}\)=0.47\%)
+\item Over-constrained
+\end{itemize}
+\item Maximal model has too many NP
+\begin{itemize}
+\item Realistic (\(\Delta\) m\(_{\text{H}}\)=0.27\%)
+\item Too many parameters
+\end{itemize}
+
+\item Need a middle ground
+\begin{itemize}
+\item Realistic
+\item Few parameters
+\item Easy to combine
+\end{itemize}
+
+\item Status of systematics :
+\begin{itemize}
+\item \url{https://indico.cern.ch/event/607537/contributions/2453161/attachments/1401546/2139318/Couplings.pdf}
+\item \url{https://indico.cern.ch/event/613697/contributions/2475511/attachments/1411833/2159897/manzoni\_13\_2\_2017.pdf}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Merging}
+\label{sec:org85b5ac0}
+\begin{frame}[label={sec:orga6f259f}]{Model Pre-fit}
+Merge a selection of NP at the tool level (similar to current ALL model).
+Model naively thought to be used when reading \href{https://cds.cern.ch/record/1637535/files/ATL-COM-PHYS-2013-1654\_2.pdf}{ATL-COM-PHYS-2013-1654}.
 \vfill
-
 \begin{columns}
 \begin{column}{0.5\columnwidth}
-\alert{FullMerged}
-
-Merge some systematics into Barrel+encap (48NP)
+Pros :
 \begin{itemize}
-\item MATCALO
-\item MATCRYO
-\item S12
-\item PS
+\item Easy to use for analyses (change tool option)
+\item Unique definition of NP for combination (\(\gamma \gamma\) and 4l)
+\end{itemize}
+
+Cons :
+\begin{itemize}
+\item Increase the total uncertainty
+\item Must find a model which minimise the increase for all analyses
 \end{itemize}
 \end{column}
 
 \begin{column}{0.5\columnwidth}
-\alert{MergeEta}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Zim/Hgam/PhotonSystematic/170209_CompareSystModel_h013_mean.pdf}
+\end{center}
 
-Correlate all systematics in \(\eta\) (31NP)
+\begin{itemize}
+\item FULLMerge : merging a set of NP
+\item FULLNoEta : merging all dependencies in \(\eta\)
+\end{itemize}
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org6c8e211}]{Results}
-\begin{columns}
-\begin{column}{0.45\columnwidth}
-\begin{center}
-\includegraphics[width=\linewidth]{./plots/h013_ALL_Systematics_Inclusive_mean_mean.pdf}
-\end{center}
-\end{column}
+\begin{frame}[label={sec:org19271cb}]{Model Post-fit}
+Merge a selection of NP after evaluation of effect on mass distribution.
+Done in run 1 : \href{https://cds.cern.ch/record/1642851/files/ATL-COM-PHYS-2014-018.pdf}{ATL-COM-PHYS-2014-018}.
+v\fill
+Pros :
+\begin{itemize}
+\item Inclusive uncertainty strictly equals the full model (categorised uncertainty less trivial)
+\item Optimisation of merging can be adapted in each analysis
+\end{itemize}
 
-\begin{column}{0.45\columnwidth}
-\begin{center}
-\includegraphics[width=\linewidth]{./plots/h013_FULL_Systematics_Inclusive_mean_mean.pdf}
-\end{center}
-\end{column}
-\end{columns}
-
-\begin{columns}
-\begin{column}{0.45\columnwidth}
-\begin{center}
-\includegraphics[width=\linewidth]{./plots/h013_FULLMerge_Systematics_Inclusive_mean_mean.pdf}
-\end{center}
-\end{column}
-
-\begin{column}{0.45\columnwidth}
-\begin{center}
-\includegraphics[width=\linewidth]{./plots/h013_FULLNoEta_Systematics_Inclusive_mean_mean.pdf}
-\end{center}
-\end{column}
-\end{columns}
+Cons :
+\begin{itemize}
+\item Recommandations must be provided and followed for combination.
+\item Does not reduce statistical fluctuations impact on uncertainties.
+\end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org0af9940}]{Comparison}
-\begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Zim/Hgam/PhotonSystematic/170209_CompareSystModel_h013.pdf}
-\end{center}
-\end{frame}
-\section{h014}
-\label{sec:org25b2903}
-\begin{frame}[label={sec:orgc589fb6}]{ALL}
-\begin{columns}
-\begin{column}{0.5\columnwidth}
-\begin{center}
-\includegraphics[width=\linewidth]{./plots/h014_ALL_Systematics_Inclusive_mean_mean.pdf}
-\end{center}
-\begin{center}
-\includegraphics[width=\linewidth]{./plots/h014_ALL_Systematics_Inclusive_sigma_sigma.pdf}
-\end{center}
-\end{column}
+\begin{frame}[label={sec:orgb67d4b1}]{Diagonalisation}
+\begin{itemize}
+\item Diagonalise covariance matrix and define new NP as eigen-vectors
+\item Keep N higher eigen-values and merge remaining ones (as either model 1 or 2)
+\end{itemize}
+\vfill
+Pros :
+\begin{itemize}
+\item Merged parameters are the ones having the less impact
+\end{itemize}
 
-\begin{column}{0.5\columnwidth}
-\begin{center}
-\includegraphics[width=\linewidth]{/home/goudet/Documents/LAL/Zim/Hgam/PhotonSystematic/170209_CompareSystModel_h014.pdf}
-\end{center}
-\end{column}
-\end{columns}
+Cons :
+\begin{itemize}
+\item Loss of physical meaning of NP
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[label={sec:org4542a2a}]{Conclusion}
+\begin{itemize}
+\item h015 calibration systematic samples appearing
+\item Need to define a strategy for HGam analyses (and H4l)
+\begin{itemize}
+\item Physical or eigen-vectors NP
+\item Merging pre- or post- mass distribution fit
+\end{itemize}
+\end{itemize}
 \end{frame}
 \end{document}

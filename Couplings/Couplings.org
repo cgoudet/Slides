@@ -1,13 +1,13 @@
-# #+TITLE:     Photon Energy Calibration Systematics
+#+TITLE:  Discussion on calibration systematic model
 #+AUTHOR:    Christophe Goudet
-# #+EMAIL:     goudet@lal.in2p3.fr
-# #+DATE:\today
+#+EMAIL:     goudet@lal.in2p3.fr
+#+DATE:\today
 #+DESCRIPTION:
 #+KEYWORDS:
 #+LANGUAGE:  en
 #+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
 #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
-# #+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0
 # path:http://orgmode.org/org-info.js
 #+EXPORT_SELECT_TAGS: export
 #+EXPORT_EXCLUDE_TAGS: noexport
@@ -22,85 +22,84 @@
 #+BEAMER_HEADER: \usepackage{appendixnumberbeamer}
 #+BEAMER_THEME: Boadilla
 
+
+
 * Correlation model
-** Merging in \eta
 
-Two models of merging of the FULL (84NP) model are tested.
-In both cases it relies on recorrelating \eta bins of some systematics.
+** Introduction
+- Calibration uncertainties include ~85 sources
+- Minimal model (ALL)
+  - Conservative (\Delta m_H=0.47%)
+  - Over-constrained
+- Maximal model has too many NP
+  - Realistic (\Delta m_H=0.27%)
+  - Too many parameters
 
+- Need a middle ground
+  - Realistic
+  - Few parameters
+  - Easy to combine
+
+- Status of systematics :
+  - [[https://indico.cern.ch/event/607537/contributions/2453161/attachments/1401546/2139318/Couplings.pdf]]
+  - [[https://indico.cern.ch/event/613697/contributions/2475511/attachments/1411833/2159897/manzoni_13_2_2017.pdf]]
+
+* Merging
+** Model Pre-fit
+Merge a selection of NP at the tool level (similar to current ALL model).
+Model naively thought to be used when reading [[https://cds.cern.ch/record/1637535/files/ATL-COM-PHYS-2013-1654_2.pdf][ATL-COM-PHYS-2013-1654]].
 \vfill
-
-*** FullMerged
+*** col
 :PROPERTIES:
 :BEAMER_COL: 0.5
 :END:
 
-*FullMerged*
+Pros :
+- Easy to use for analyses (change tool option)
+- Unique definition of NP for combination (\gamma\gamma and 4l)
 
-Merge some systematics into Barrel+encap (48NP)
-- MATCALO
-- MATCRYO
-- S12
-- PS
+Cons :
+- Increase the total uncertainty
+- Must find a model which minimise the increase for all analyses
 
-*** mergeEta
+*** col
 :PROPERTIES:
 :BEAMER_COL: 0.5
 :END:
+[[/home/goudet/Documents/LAL/Zim/Hgam/PhotonSystematic/170209_CompareSystModel_h013_mean.pdf]]
 
- *MergeEta*
+- FULLMerge : merging a set of NP
+- FULLNoEta : merging all dependencies in \eta
 
-Correlate all systematics in \eta (31NP)
+** Model Post-fit
+Merge a selection of NP after evaluation of effect on mass distribution.
+Done in run 1 : [[https://cds.cern.ch/record/1642851/files/ATL-COM-PHYS-2014-018.pdf][ATL-COM-PHYS-2014-018]].
+v\fill
+Pros :
+- Inclusive uncertainty strictly equals the full model (categorised uncertainty less trivial)
+- Optimisation of merging can be adapted in each analysis
 
-** Results
-*** topLeft                                                           :BMCOL:
-:PROPERTIES:
-:BEAMER_col: 0.45
-:END:
-#+ATTR_LATEX: :width \linewidth
-[[./plots/h013_ALL_Systematics_Inclusive_mean_mean.pdf]]
+Cons :
+- Recommandations must be provided and followed for combination.
+- Does not reduce statistical fluctuations impact on uncertainties.
 
-*** topRight                                                      :BMCOL:
-:PROPERTIES:
-:BEAMER_col: 0.45
-:END:
-#+ATTR_LATEX: :width \linewidth
-[[./plots/h013_FULL_Systematics_Inclusive_mean_mean.pdf]]
+** Diagonalisation
+- Diagonalise covariance matrix and define new NP as eigen-vectors
+- Keep N higher eigen-values and merge remaining ones (as either model 1 or 2)
+\vfill
+Pros :
+- Merged parameters are the ones having the less impact
 
-*** newline                                                 :B_ignoreheading:
-:PROPERTIES:
-:BEAMER_env: ignoreheading
-:END:
-*** bottomLeft                                                        :BMCOL:
-:PROPERTIES:
-:BEAMER_col: 0.45
-:END:
-#+ATTR_LATEX: :width \linewidth
-[[./plots/h013_FULLMerge_Systematics_Inclusive_mean_mean.pdf]]
+Cons :
+- Loss of physical meaning of NP
 
-*** bottomRight                                                       :BMCOL:
-:PROPERTIES:
-:BEAMER_col: 0.45
-:END:
-#+ATTR_LATEX: :width \linewidth
-[[./plots/h013_FULLNoEta_Systematics_Inclusive_mean_mean.pdf]]
 
-** Comparison
-[[/home/goudet/Documents/LAL/Zim/Hgam/PhotonSystematic/170209_CompareSystModel_h013.pdf]]
-* h014
-** ALL
+# ** h015
+# h015 ALL samples finished running
 
-*** inclusive                                                         :BMCOL:
-:PROPERTIES:
-:BEAMER_col: 0.5
-:END:
-#+ATTR_LATEX: :width \linewidth
-[[./plots/h014_ALL_Systematics_Inclusive_mean_mean.pdf]]
-[[./plots/h014_ALL_Systematics_Inclusive_sigma_sigma.pdf]]
 
-*** categories                                               :BMCOL:
-:PROPERTIES:
-:BEAMER_col: 0.5
-:END:
-#+ATTR_LATEX: :width \linewidth
-[[/home/goudet/Documents/LAL/Zim/Hgam/PhotonSystematic/170209_CompareSystModel_h014.pdf]]
+** Conclusion
+- h015 calibration systematic samples appearing
+- Need to define a strategy for HGam analyses (and H4l)
+  - Physical or eigen-vectors NP
+  - Merging pre- or post- mass distribution fit
