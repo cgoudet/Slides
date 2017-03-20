@@ -1,4 +1,4 @@
-% Created 2017-03-13 lun. 17:40
+% Created 2017-03-11 sam. 11:55
 % Intended LaTeX compiler: pdflatex
 \documentclass[bigger]{beamer}
 \usepackage[utf8]{inputenc}
@@ -17,12 +17,12 @@
 \usetheme{Boadilla}
 \author{Christophe Goudet}
 \date{\today}
-\title{Photon Calibration Systematics}
+\title{ROOT/RooFit fit difference}
 \beamertemplatenavigationsymbolsempty
 \usepackage{appendixnumberbeamer}
 \hypersetup{
  pdfauthor={Christophe Goudet},
- pdftitle={Photon Calibration Systematics},
+ pdftitle={ROOT/RooFit fit difference},
  pdfkeywords={},
  pdfsubject={},
  pdfcreator={Emacs 24.5.1 (Org mode 9.0.4)},
@@ -31,20 +31,9 @@
 
 \maketitle
 
-\section{Fit issue}
-\label{sec:org424260f}
-
-\begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Couplings/plots/pg_0001.pdf}
-\end{center}
-\begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Couplings/plots/pg_0002.pdf}
-\end{center}
-\begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Couplings/plots/pg_0003.pdf}
-\end{center}
-
-\begin{frame}[label={sec:orgb6e93ae}]{Effect on systematics}
+\section{Introduction}
+\label{sec:org292386b}
+\begin{frame}[label={sec:org5d0baf9}]{Introduction}
 \begin{itemize}
 \item Marc observed a difference in fit results depending on using ROOT or RooFit
 \begin{itemize}
@@ -61,7 +50,7 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orga2a7208}]{Inclusive Fit Values}
+\begin{frame}[label={sec:org164a9b8}]{Inclusive Fit Values}
 \begin{center}
 \tiny
 \begin{tabular}{lrrrrrr}
@@ -89,7 +78,7 @@ EG-SCALE-ALL--1up & 125.598 & 1.87389 & 1.6817 & 1.37856 & 6.73971 & 7.27819\\
 \end{tabular}
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:orge690d80}]{Inclusive results in ALL model}
+\begin{frame}[label={sec:org1da5e7c}]{Inclusive results in ALL model}
 \begin{itemize}
 \item Binned or unbinned fit with RooFit give similar results
 \item RooFit or Root give sligthly different systematics
@@ -98,47 +87,47 @@ EG-SCALE-ALL--1up & 125.598 & 1.87389 & 1.6817 & 1.37856 & 6.73971 & 7.27819\\
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Couplings/plots/CompareFits_Systematics_Inclusive_mean_mean.pdf}
+\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Misc/plots/CompareFits_Systematics_Inclusive_mean_mean.pdf}
 \end{center}
 \end{column}
 
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Couplings/plots/CompareFits_Systematics_Inclusive_sigma_sigma.pdf}
+\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Misc/plots/CompareFits_Systematics_Inclusive_sigma_sigma.pdf}
 \end{center}
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orgd8f3efe}]{Fits}
+\begin{frame}[label={sec:orgb852827}]{Fits}
 \begin{columns}
 \begin{column}{0.45\columnwidth}
 \begin{center}RooFit\end{center}
 \begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Couplings/plots/h015_ALL_SystVariation_EG_SCALE_ALL_0.pdf}
+\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Misc/plots/h015_ALL_SystVariation_EG_SCALE_ALL_0.pdf}
 \end{center}
 \end{column}
 
 \begin{column}{0.45\columnwidth}
 \begin{center}ROOT\end{center}
 \begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Couplings/plots/h015_ALL_root_SystVariation_EG_SCALE_ALL_0.pdf}
+\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Misc/plots/h015_ALL_root_SystVariation_EG_SCALE_ALL_0.pdf}
 \end{center}
 \end{column}
 \end{columns}
 \begin{columns}
 \begin{column}{0.45\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Couplings/plots/h015_ALL_SystVariation_EG_RESOLUTION_ALL_0.pdf}
+\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Misc/plots/h015_ALL_SystVariation_EG_RESOLUTION_ALL_0.pdf}
 \end{center}
 \end{column}
 \begin{column}{0.45\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Couplings/plots/h015_ALL_root_SystVariation_EG_RESOLUTION_ALL_0.pdf}
+\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Misc/plots/h015_ALL_root_SystVariation_EG_RESOLUTION_ALL_0.pdf}
 \end{center}
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orgc462b93}]{Categories}
+\begin{frame}[label={sec:orgb38dd87}]{Categories}
 ROOT and RooFit methods shows significant difference in VH and ttH categories
 \begin{columns}
 \begin{column}{0.5\columnwidth}
@@ -158,7 +147,7 @@ ROOT and RooFit methods shows significant difference in VH and ttH categories
 \end{frame}
 
 
-\begin{frame}[label={sec:orgcf7c84a}]{RESOLUTION VHBSM}
+\begin{frame}[label={sec:org4798c9c}]{RESOLUTION VHBSM}
 \begin{center}
 \tiny
 \begin{tabular}{lrrrrrr}
@@ -189,66 +178,13 @@ EG\(_{\text{SCALE}}\)\(_{\text{ALL}}\)\_\(_{\text{1up}}\) & 125.624 & 0.919994 &
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Couplings/plots/h015_ALL_SystVariation_EG_RESOLUTION_ALL_20.pdf}
+\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Misc/plots/h015_ALL_SystVariation_EG_RESOLUTION_ALL_20.pdf}
 \end{center}
 \end{column}
 
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Couplings/plots/h015_ALL_root_SystVariation_EG_RESOLUTION_ALL_20.pdf}
-\end{center}
-\end{column}
-\end{columns}
-\end{frame}
-
-
-\section{h015}
-\label{sec:orgeceb71a}
-\begin{frame}[label={sec:orgcc710cb}]{h015 Results ALL}
-\begin{columns}
-\begin{column}{0.5\columnwidth}
-\begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Zim/Hgam/PhotonSystematic/170309_CompareCategories_h015_mean.pdf}
-\end{center}
-\end{column}
-
-\begin{column}{0.5\columnwidth}
-\begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Zim/Hgam/PhotonSystematic/170309_CompareCategories_h015_sigma.pdf}
-\end{center}
-\end{column}
-\end{columns}
-\end{frame}
-
-
-\begin{frame}[label={sec:org8c4a6c3}]{h015 Results FULL Inclusive}
-\begin{columns}
-\begin{column}{0.5\columnwidth}
-\begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/Resultats/CompareFullCat_Systematics_Inclusive_mean_mean.pdf}
-\end{center}
-\end{column}
-
-\begin{column}{0.5\columnwidth}
-\begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/Resultats/CompareFullCat_Systematics_Inclusive_sigma_sigma.pdf}
-\end{center}
-\end{column}
-\end{columns}
-\end{frame}
-
-
-\begin{frame}[label={sec:org4c0f10a}]{h015 Results FULL categories}
-\begin{columns}
-\begin{column}{0.5\columnwidth}
-\begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/Resultats/CompareFullCat_h015_mean.pdf}
-\end{center}
-\end{column}
-
-\begin{column}{0.5\columnwidth}
-\begin{center}
-\includegraphics[width=.9\linewidth]{/home/goudet/Documents/Resultats/CompareFullCat_h015_sigma.pdf}
+\includegraphics[width=.9\linewidth]{/home/goudet/Documents/LAL/Slides/Misc/plots/h015_ALL_root_SystVariation_EG_RESOLUTION_ALL_20.pdf}
 \end{center}
 \end{column}
 \end{columns}

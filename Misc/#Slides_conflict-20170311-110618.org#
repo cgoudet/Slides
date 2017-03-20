@@ -1,0 +1,110 @@
+#+TITLE: ROOT/RooFit fit difference
+#+AUTHOR:    Christophe Goudet
+#+EMAIL:     goudet@lal.in2p3.fr
+#+DATE:\today
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0
+# path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+
+#+BEAMER_HEADER: \beamertemplatenavigationsymbolsempty
+#+BEAMER_HEADER: \usepackage{appendixnumberbeamer}
+#+BEAMER_THEME: Boadilla
+
+* Introduction
+** Introduction
+- Marc observed a difference in fit results depending on using ROOT or RooFit
+ - "looks like" RooFit does not consider uncertainties in weighted RooDataHist
+- Checked if effect has visible effects on calibration systematic determination for couplings analysis.
+- 4 fit methods compared :
+ - nominal : fit of weighted binned RooDataHist
+ - unbinned : fit of weighted unbinned RooDataSet
+ - root : fit of weighted binned TH1
+ - meanHist : mean and RMS of weighted binned TH1
+
+** Inclusive Fit Values
+
+#+ATTR_LATEX: :font \tiny
+|--------------------------+---------+---------+---------+----------+---------+---------|
+| NP                       |    mean |   sigma | alphaHi | alphaLow |     nHi |    nLow |
+|--------------------------+---------+---------+---------+----------+---------+---------|
+|--------------------------+---------+---------+---------+----------+---------+---------|
+| RooFit                   |         |         |         |          |         |         |
+|--------------------------+---------+---------+---------+----------+---------+---------|
+| Nominal                  | 125.026 | 1.80019 | 1.40272 |  1.27818 | 42.7717 | 10.9658 |
+| EG-RESOLUTION-ALL--1down | 125.029 | 1.67024 | 1.40272 |  1.27818 | 42.7717 | 10.9658 |
+| EG-RESOLUTION-ALL--1up   | 125.022 | 1.93601 | 1.40272 |  1.27818 | 42.7717 | 10.9658 |
+| EG-SCALE-ALL--1up        |  125.59 | 1.83223 | 1.40272 |  1.27818 | 42.7717 | 10.9658 |
+| EG-SCALE-ALL--1down      |  124.46 | 1.80542 | 1.40272 |  1.27818 | 42.7717 | 10.9658 |
+|--------------------------+---------+---------+---------+----------+---------+---------|
+|--------------------------+---------+---------+---------+----------+---------+---------|
+| Root                     |         |         |         |          |         |         |
+|--------------------------+---------+---------+---------+----------+---------+---------|
+| Nominal                  | 125.032 | 1.84212 |  1.6817 |  1.37856 | 6.73971 | 7.27819 |
+| EG-RESOLUTION-ALL--1down | 125.033 | 1.70918 |  1.6817 |  1.37856 | 6.73971 | 7.27819 |
+| EG-RESOLUTION-ALL--1up   |  125.03 | 1.97901 |  1.6817 |  1.37856 | 6.73971 | 7.27819 |
+| EG-SCALE-ALL--1down      | 124.464 |  1.8484 |  1.6817 |  1.37856 | 6.73971 | 7.27819 |
+| EG-SCALE-ALL--1up        | 125.598 | 1.87389 |  1.6817 |  1.37856 | 6.73971 | 7.27819 |
+|--------------------------+---------+---------+---------+----------+---------+---------|
+** Inclusive results in ALL model
+
+- Binned or unbinned fit with RooFit give similar results
+- RooFit or Root give sligthly different systematics
+
+*** col
+:PROPERTIES:
+:BEAMER_COL: 0.5
+:END:
+[[/home/goudet/Documents/LAL/Slides/Misc/plots/CompareFits_Systematics_Inclusive_mean_mean.pdf]]
+
+*** col
+:PROPERTIES:
+:BEAMER_COL: 0.5
+:END:
+[[/home/goudet/Documents/LAL/Slides/Misc/plots/CompareFits_Systematics_Inclusive_sigma_sigma.pdf]]
+** Fits
+*** col
+:PROPERTIES:
+:BEAMER_COL: 0.45
+:END:
+\begin{center}RooFit\end{center}
+[[/home/goudet/Documents/LAL/Slides/Misc/plots/h015_ALL_SystVariation_EG_SCALE_ALL_0.pdf]]
+
+*** col
+:PROPERTIES:
+:BEAMER_COL: 0.45
+:END:
+\begin{center}ROOT\end{center}
+[[/home/goudet/Documents/LAL/Slides/Misc/plots/h015_ALL_root_SystVariation_EG_SCALE_ALL_0.pdf]]
+*** newline                                                 :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+*** col
+:PROPERTIES:
+:BEAMER_COL: 0.45
+:END:
+[[/home/goudet/Documents/LAL/Slides/Misc/plots/h015_ALL_SystVariation_EG_RESOLUTION_ALL_0.pdf]]
+*** col
+:PROPERTIES:
+:BEAMER_COL: 0.45
+:END:
+
+
+[[/home/goudet/Documents/LAL/Slides/Misc/plots/h015_ALL_root_SystVariation_EG_RESOLUTION_ALL_0.pdf]]
+** Categories
+*** col
+:PROPERTIES:
+:BEAMER_COL: 0.5
+:END:
